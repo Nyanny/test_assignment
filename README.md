@@ -1,3 +1,3 @@
 # test_assignment
 
-Surf company test assignment for for job applicants.
+Surf company test assignment for job applicants.
