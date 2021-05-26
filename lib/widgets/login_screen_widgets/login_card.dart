@@ -24,7 +24,7 @@ class LoginCard extends StatelessWidget {
             const Divider(
               height: 56,
               thickness: 0,
-              color: Colors.white,
+              color: Colors.transparent,
             ),
             EnterMaterialButton(),
           ],

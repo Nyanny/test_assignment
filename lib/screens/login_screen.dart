@@ -34,7 +34,7 @@ class LoginScreen extends StatelessWidget {
                 const Divider(
                   height: 40,
                   thickness: 0,
-                  color: Colors.white,
+                  color: Colors.transparent,
                 ),
                 Container(
                   height: 300,
