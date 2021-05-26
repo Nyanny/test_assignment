@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class BackgroundImage extends StatelessWidget {
@@ -22,8 +24,8 @@ class LoginBackgroundImageClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     Path path = Path();
     path.lineTo(0, size.height * 0.5);
-    // TODO Не понял, как посмотреть в фигме угол наклона
-    path.lineTo(size.width, size.height * 0.37);
+    // 10 градусов от середины
+    path.lineTo(size.width, size.height/2 - size.width*tan(0.174533));
     path.lineTo(size.width, 0);
     return path;
   }
