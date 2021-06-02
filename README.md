@@ -2,7 +2,7 @@
 
 Surf company test assignment for job applicants.
 
-Сделано с использование паттерна управлением состояния Cubit библиотеки https://pub.dev/packages/flutter_bloc
+Сделано с использованием паттерна управления состояния Cubit библиотеки https://pub.dev/packages/flutter_bloc
 
 Screenshots:
 
