@@ -1,19 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:test_assignment/cubit/authentication_cubit.dart';
+import 'package:test_assignment/cubit/login_cubit.dart';
+
 import 'package:test_assignment/widgets/login_screen_widgets/background_image.dart';
 import 'package:test_assignment/widgets/login_screen_widgets/login_card.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
+  static Route route() {
+    return MaterialPageRoute<void>(builder: (_) => LoginScreen());
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    // TODO
+    final AuthenticationCubit authenticationCubit =
+        BlocProvider.of<AuthenticationCubit>(context);
+    return BlocProvider(
+      create: (context) => LoginCubit(authenticationCubit: authenticationCubit),
+      child: Scaffold(
+          body: Stack(
         fit: StackFit.expand,
         children: [
           const BackgroundImage(),
           Positioned(
-            // TODO не понимаю, как ориентироваться на Figma для позиции и размеров Card. Сделал "на глаз"
             bottom: 50,
             left: 30,
             right: 30,
@@ -22,7 +34,6 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // TODO сделать скрытие текста, когда в фокусе поля
                 const Text(
                   "Вход",
                   style: TextStyle(
@@ -45,12 +56,13 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ]),
                   child: const LoginCard(),
+                  // child: LoginCard(authenticationCubit: authenticationCubit),
                 ),
               ],
             ),
           )
         ],
-      ),
+      )),
     );
   }
 }

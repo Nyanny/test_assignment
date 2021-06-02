@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:test_assignment/widgets/login_screen_widgets/password_text_form_field.dart';
+import 'package:test_assignment/widgets/login_screen_widgets/password_text_field.dart';
 
-import 'email_text_form_field.dart';
+import 'email_text_field.dart';
 import 'enter_material_button.dart';
 
 class LoginCard extends StatelessWidget {
   const LoginCard({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -18,15 +17,16 @@ class LoginCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            EmailTextFormField(),
-            PasswordTextFormField(),
-            const Divider(
+          children: const [
+            EmailTextField(),
+            PasswordTextField(),
+            Divider(
               height: 56,
               thickness: 0,
               color: Colors.transparent,
             ),
             EnterMaterialButton(),
+            // EnterMaterialButton(authenticationCubit: authenticationCubit),
           ],
         ),
       ),

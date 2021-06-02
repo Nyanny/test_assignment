@@ -25,7 +25,7 @@ class LoginBackgroundImageClipper extends CustomClipper<Path> {
     Path path = Path();
     path.lineTo(0, size.height * 0.5);
     // 10 градусов от середины
-    path.lineTo(size.width, size.height/2 - size.width*tan(0.174533));
+    path.lineTo(size.width, size.height / 2 - size.width * tan(0.174533));
     path.lineTo(size.width, 0);
     return path;
   }
