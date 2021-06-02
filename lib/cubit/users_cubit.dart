@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_assignment/cubit/users_state.dart';
 import 'package:test_assignment/models/user_model.dart';
-import 'package:test_assignment/network/users_repository.dart';
+import 'package:test_assignment/repositories/users_repository.dart';
 
 class UsersCubit extends Cubit<UsersState> {
   final UsersRepository usersRepository;
